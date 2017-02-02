@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C5E99271CF7D63C008D4940 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/Socket-0.5.11/Sources/Socket.swift" /* Socket.swift */; };
+		8C5E99281CF7D63C008D4940 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/Socket-0.5.11/Sources/SocketProtocols.swift" /* SocketProtocols.swift */; };
+		8C5E99291CF7D63C008D4940 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/Socket-0.5.11/Sources/SocketUtils.swift" /* SocketUtils.swift */; };
+		_LinkFileRef_Socket_via_SSLService /* libSocket.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_Socket" /* libSocket.dylib */; };
+		__src_cc_ref_Sources/SSLService.swift /* SSLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/SSLService.swift /* SSLService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C4223031CF7428E0047BDC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_Socket";
+			remoteInfo = Socket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8C4223041CF7444C0047BDC3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8C4223051CF7444C0047BDC3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/Socket-0.5.11/Sources/Socket.swift" /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Socket.swift; path = ../BlueSocket/Sources/Socket.swift; sourceTree = SOURCE_ROOT; };
+		"__PBXFileRef_Packages/Socket-0.5.11/Sources/SocketProtocols.swift" /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocketProtocols.swift; path = ../BlueSocket/Sources/SocketProtocols.swift; sourceTree = SOURCE_ROOT; };
+		"__PBXFileRef_Packages/Socket-0.5.11/Sources/SocketUtils.swift" /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocketUtils.swift; path = ../BlueSocket/Sources/SocketUtils.swift; sourceTree = SOURCE_ROOT; };
+		__PBXFileRef_SSLService.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = SSLService.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/SSLService.swift /* SSLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SSLService.swift; path = Sources/SSLService.swift; sourceTree = "<group>"; };
+		"_____Product_SSLService" /* libSSLService.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libSSLService.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_Socket" /* libSocket.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libSocket.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		"___LinkPhase_SSLService" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_Socket_via_SSLService /* libSocket.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_Socket" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		Dependencies_ /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_Socket" /* Socket */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		"___RootGroup_" = {
+			isa = PBXGroup;
+			children = (
+				8C4223041CF7444C0047BDC3 /* LICENSE */,
+				__PBXFileRef_Package.swift /* Package.swift */,
+				8C4223051CF7444C0047BDC3 /* README.md */,
+				"_____Sources_" /* Sources */,
+				"_____Configs_" /* Configs */,
+				Dependencies_ /* Dependencies */,
+				"____Products_" /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		"____Products_" /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"_____Product_Socket" /* libSocket.dylib */,
+				"_____Product_SSLService" /* libSSLService.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		"_____Configs_" /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_SSLService.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
+			);
+			name = Configs;
+			sourceTree = "<group>";
+		};
+		"_____Sources_" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Sources/SSLService.swift /* SSLService.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_Socket" /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				"__PBXFileRef_Packages/Socket-0.5.11/Sources/Socket.swift" /* Socket.swift */,
+				"__PBXFileRef_Packages/Socket-0.5.11/Sources/SocketProtocols.swift" /* SocketProtocols.swift */,
+				"__PBXFileRef_Packages/Socket-0.5.11/Sources/SocketUtils.swift" /* SocketUtils.swift */,
+			);
+			name = Socket;
+			path = "Packages/Socket-0.5.11/Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"______Target_SSLService" /* SSLService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_SSLService" /* Build configuration list for PBXNativeTarget "SSLService" */;
+			buildPhases = (
+				8C4223071CF744AA0047BDC3 /* ShellScript */,
+				CompilePhase_SSLService /* Sources */,
+				"___LinkPhase_SSLService" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_Socket /* PBXTargetDependency */,
+			);
+			name = SSLService;
+			productName = SSLService;
+			productReference = "_____Product_SSLService" /* libSSLService.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		"______Target_Socket" /* Socket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_Socket" /* Build configuration list for PBXNativeTarget "Socket" */;
+			buildPhases = (
+				CompilePhase_Socket /* Sources */,
+				"___LinkPhase_Socket" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Socket;
+			productName = Socket;
+			productReference = "_____Product_Socket" /* libSocket.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		__RootObject_ /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+			};
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "SSLService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"______Target_Socket" /* Socket */,
+				"______Target_SSLService" /* SSLService */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C4223071CF744AA0047BDC3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nCC_PATH=\"$SRCROOT/OpenSSL\"\necho \"$CC_PATH\"\n\nif [ -e $CC_PATH ] ; then\necho \"$CC_PATH exists...\"\nelse\nmkdir -p \"$CC_PATH\"\nfi\n\n# Write the module.map file\ncat <<_EOF_ > \"$CC_PATH/module.map\"\nmodule OpenSSL [system] {\n    header \"/usr/local/opt/openssl/include/openssl/conf.h\"\n    header \"/usr/local/opt/openssl/include/openssl/evp.h\"\n    header \"/usr/local/opt/openssl/include/openssl/err.h\"\n    header \"/usr/local/opt/openssl/include/openssl/bio.h\"\n    header \"/usr/local/opt/openssl/include/openssl/ssl.h\"\n    header \"/usr/local/opt/openssl/include/openssl/md4.h\"\n    header \"/usr/local/opt/openssl/include/openssl/md5.h\"\n    header \"/usr/local/opt/openssl/include/openssl/sha.h\"\n    header \"/usr/local/opt/openssl/include/openssl/hmac.h\"\n    header \"/usr/local/opt/openssl/include/openssl/rand.h\"\n    link \"ssl\"\n    link \"crypto\"\n}\n_EOF_\necho \"Created OpenSSL Module Map.  OpenSSL Framework now available.\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CompilePhase_SSLService /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				__src_cc_ref_Sources/SSLService.swift /* SSLService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_Socket /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				8C5E99271CF7D63C008D4940 /* Socket.swift in Sources */,
+				8C5E99281CF7D63C008D4940 /* SocketProtocols.swift in Sources */,
+				8C5E99291CF7D63C008D4940 /* SocketUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		__Dependency_Socket /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_Socket" /* Socket */;
+			targetProxy = 8C4223031CF7428E0047BDC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		_ReleaseConf_SSLService /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = "-I/usr/local/opt/openssl/include";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "lib$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "\"$SRCROOT/OpenSSL\"";
+				USER_HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+			};
+			name = Release;
+		};
+		_ReleaseConf_Socket /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "lib$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		"___DebugConf_SSLService" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = "-I/usr/local/opt/openssl/include";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "lib$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "\"$SRCROOT/OpenSSL\"";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+			};
+			name = Debug;
+		};
+		"___DebugConf_Socket" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "lib$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"_____Release_" /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_SSLService.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_SSLService.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		"___RootConfs_" /* Build configuration list for PBXProject "SSLService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_SSLService" /* Build configuration list for PBXNativeTarget "SSLService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_SSLService" /* Debug */,
+				_ReleaseConf_SSLService /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_Socket" /* Build configuration list for PBXNativeTarget "Socket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_Socket" /* Debug */,
+				_ReleaseConf_Socket /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = __RootObject_ /* Project object */;
+}
