@@ -1,0 +1,29 @@
+# Travis CI build file for the Kitura-CouchDB Swift package.
+# Kitura runs on OS X and Linux (Ubuntu v15.10).
+
+# whitelist (branches that should be built)
+branches:
+  only:
+    - master
+    - develop
+    - /^issue.*$/
+
+notifications:
+  slack:
+    secure: "MBh9+nRhthaIG0qqb31MFGLtkcl1KdV3a8ERChoLS9YySlc5TiqAzQyofUhPLaGeuNxmBscTZfTXDBhD30KQfC9nNnQVhfOLtbOCLJFuplM7G39YYRe3dnaHpkvlhO5QjXTvmqnz3eC1XxnaaMe7a+LykuWW1INcWQwyOQh5d4BTSgOoae6xKuF7WORysaEJpF3H76JKfGaaosBvSrI5BZInGTn9WJ4Ocejd0EmO8MUyxmGJOFeTlhNOqhkPmwuGVUOFjH0dsJiqG0uF6MjAAZ0tMLlsxHL0oHCjUFP60rMhmv25tAAT2I+jWdVQM07VBG0NPwgSn9JUf9ezZAE3K8nSF/aG1l5vibQRZjUzVd5ecpehRZhvzCa/EvVYTqT5GDJuWPcdIBsl1fODVkjqkDlAqfUfBTUh9cRma5K8JqtcZFgjegyjxOqxuLA/rCkZGZ8Xudp4qDJOrk1oZkm+m7xbN1NPQUcJKXRApDvOnexJPsXhYx50T+WU6SWOILX4k8d4rGOTQVwTXZMCoL/4lPMRV6xTxrAy/vgYboQItJmYtP85PWZo3hwbqBW7tzc+Vt8ZkTU8Uv6EfJAsJNwQfciNvttZKyIb5uQrDVV+QV6pkjJ4etyl7I04MM28CA5BrGKH7ZUKYHhow0qVXTW+vP/k1moTWnKDEWzJS5KmJkw="
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+    - os: osx
+      osx_image: xcode8.2
+      sudo: required
+
+before_install:
+  - git clone https://github.com/shmuelk/Package-Builder.git
+  - git clone -b master "https://$GITHUB_USER:$GITHUB_PWD@github.com/IBM-Swift/Kitura-TestingCredentials.git"
+
+script:
+  - ./Package-Builder/build-package.sh -projectDir $TRAVIS_BUILD_DIR -credentialsDir $TRAVIS_BUILD_DIR/Kitura-TestingCredentials/Kitura-CouchDB
