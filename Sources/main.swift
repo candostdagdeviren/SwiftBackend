@@ -1,15 +1,21 @@
 import Kitura
 import HeliumLogger
+import CouchDB
 
 HeliumLogger.use()
 
-let router = Router()
+let connProperties = ConnectionProperties(
+    host: "127.0.0.1",  // httpd address
+    port: 5984,         // httpd port
+    secured: false,     // https or http
+    username: "candost",      // admin username
+    password: "1234"       // admin password
+)
 
-router.get("/") { request, response, next in
-  response.send("Hello world")
-  next()
-}
+let db = Database(connProperties: connProperties, dbName: "kitura_test_db")
+let databaseInteraction = DatabaseInteraction(db: db)
+let app = MainRouter(db: databaseInteraction)
 
-Kitura.addHTTPServer(onPort: 8090, with: router)
+Kitura.addHTTPServer(onPort: 8090, with: app.router)
 
 Kitura.run()
