@@ -1,0 +1,3 @@
+import SwiftBackendLib
+
+SwiftBackend.run()

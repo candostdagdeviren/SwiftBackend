@@ -14,6 +14,10 @@ public class UserRouter {
     addCreateUser(to: router)
   }
 
+  public func add(a: Int, b: Int) -> Int {
+    return a + b
+  }
+
   private func addGetUserById(to router: Router) {
     router.get("/v1/user/:id", handler: { req, res, next in
       let id = req.parameters["id"]
@@ -41,7 +45,7 @@ public class UserRouter {
           let name = jsonBody["name"].string ?? ""
           let user = User(name: name, id: "\(name.characters.count)")
           self.db.addNewUser(user) { (id, revision, doc, error) in
-            if let error = error {
+            if error != nil {
               res.status(.internalServerError)
               next()
             } else {
