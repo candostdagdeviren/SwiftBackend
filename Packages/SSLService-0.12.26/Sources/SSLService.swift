@@ -148,6 +148,9 @@ public class SSLService: SSLServiceDelegate {
 			/// Cipher suites to use. Defaults to `14,13,2B,2F,2C,30,9E,9F,23,27,09,28,13,24,0A,14,67,33,6B,39,08,12,16,9C,9D,3C,3D,2F,35,0A`
 			// @FIXME: This isn't quite right, needs to be revisited.
 			public var cipherSuite: String = "14,13,2B,2F,2C,30,9E,9F,23,27,09,28,13,24,0A,14,67,33,6B,39,08,12,16,9C,9D,3C,3D,2F,35,0A"
+		
+			/// `True` to use default cipher list, false otherwise.
+			public var useDefaultCiphers: Bool = true
 
 			/// Cached array of previously imported PKCS12.
 			fileprivate var pkcs12Certs: CFArray? = nil
@@ -791,12 +794,22 @@ public class SSLService: SSLServiceDelegate {
 			}
 			
 			// Handle the stuff common to both client and server...
+			//	- Auto retry...
 			SSL_CTX_ctrl(context, SSL_CTRL_MODE, SSL_MODE_AUTO_RETRY, nil)
+
+			//	- User selected cipher list...
 			SSL_CTX_set_cipher_list(context, self.configuration.cipherSuite)
+
+			//	- Verification behavior...
 			if self.configuration.certsAreSelfSigned {
 				SSL_CTX_set_verify(context, SSL_VERIFY_NONE, nil)
 			}
 			SSL_CTX_set_verify_depth(context, SSLService.DEFAULT_VERIFY_DEPTH)
+			
+			#if USE_AUTO_ECDH
+			//	- Auto ECDH handling...  Note: requires OpenSSL 1.0.2 or greater.
+			SSL_CTX_ctrl(context, SSL_CTRL_SET_ECDH_AUTO, 1, nil)
+			#endif
 			
 			// Then handle the client/server specific stuff...
 			if !self.isServer {
@@ -965,6 +978,11 @@ public class SSLService: SSLServiceDelegate {
 					try self.throwLastError(source: "SSLSetCertificate", err: status)
 				}
 				
+			}
+			
+			// If we're using default ciphers, skip the process below...
+			if configuration.useDefaultCiphers {
+				return
 			}
 			
 			//	- Setup the cipher list...
