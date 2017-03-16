@@ -11,7 +11,7 @@ public class SwiftBackend {
         port: 5984,         // httpd port
         secured: false,     // https or http
         username: "candost",      // admin username
-        password: "1234"       // admin password
+        password: "password"       // admin password
     )
 
     let db = Database(connProperties: connProperties, dbName: "kitura_test_db")

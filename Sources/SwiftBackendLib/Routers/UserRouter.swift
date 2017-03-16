@@ -10,15 +10,15 @@ public class UserRouter {
   }
 
   public func bindAll(to router: Router) {
-    addGetUserById(to: router)
-    addCreateUser(to: router)
+    getUserById(to: router)
+    createUser(to: router)
   }
 
   public func add(a: Int, b: Int) -> Int {
     return a + b
   }
 
-  private func addGetUserById(to router: Router) {
+  private func getUserById(to router: Router) {
     router.get("/v1/user/:id", handler: { req, res, next in
       let id = req.parameters["id"]
       guard let userId = id else {
@@ -26,13 +26,24 @@ public class UserRouter {
         next()
         return
       }
-      let users: [String: Any] = [userId: ["user": "", "id": userId]]
-      res.send(json: JSON(users))
-      next()
+      self.db.getUser(with:userId) { (id, doc, error) in
+        if error != nil {
+          res.status(.internalServerError)
+          next()
+        } else {
+          res.status(.OK)
+          if let doc = doc {
+            res.send(json: doc)
+          } else {
+            res.send("something is wrong")
+          }
+          next()
+        }
+      }
     })
   }
 
-  private func addCreateUser(to router: Router) {
+  private func createUser(to router: Router) {
     router.post("/v1/user/", handler: { req, res, next in
       guard let parsedBody = req.body else {
         res.status(.badRequest)
@@ -43,7 +54,8 @@ public class UserRouter {
       switch(parsedBody) {
         case .json(let jsonBody):
           let name = jsonBody["name"].string ?? ""
-          let user = User(name: name, id: "\(name.characters.count)")
+          let userId = jsonBody["id"].string ?? ""
+          let user = User(name: name, id: userId)
           self.db.addNewUser(user) { (id, revision, doc, error) in
             if error != nil {
               res.status(.internalServerError)
