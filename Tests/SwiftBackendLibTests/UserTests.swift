@@ -8,7 +8,7 @@
 
 import XCTest
 import CouchDB
-@testable import BackendLib
+@testable import SwiftBackendLib
 
 class UserTests: XCTestCase {
     var router: UserRouter!
