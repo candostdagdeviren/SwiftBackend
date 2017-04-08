@@ -1,0 +1,29 @@
+# version: "3"
+# services:
+#   couchdb:
+#     image: couchdb
+#     ports:
+#       - "5984:5984"
+#   seed-db:
+#     image: ibmcom/swift-ubuntu:latest
+#     volumes:
+#       - .:/root/SwiftBackend
+#     command: "./create_couchdb.sh --username=admin --password=password --url=http://localhost:5984"
+#     links:
+#       - couchdb
+#   swiftbackend:
+#     image: ibmcom/swift-ubuntu:latest
+#     links:
+#       - couchdb
+#     ports:
+#       - 8090:8090
+#     command: "swift build && ./.build/debug/SwiftBackendApp"
+
+app:
+  image: ibmcom/swift-ubuntu:latest
+  ports:
+    - "8090:8090"
+  command: bash -c "swift build && ./.build/debug/SwiftBackendApp"
+  restart: 'always'
+  # links:
+      # - db:127.0.0.1

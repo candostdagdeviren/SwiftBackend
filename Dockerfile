@@ -5,4 +5,4 @@ WORKDIR /app
 EXPOSE 8090
 USER root
 RUN swift build
-CMD [".build/debug/SwiftBackend"]
+CMD [".build/debug/SwiftBackendApp"]
